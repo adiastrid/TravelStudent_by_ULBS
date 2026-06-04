@@ -129,7 +129,7 @@
         '⬇ Descarcă':'⬇ Download','Planificator inteligent':'Smart planner',
         'Introdu detaliile călătoriei și primești recomandări bazate pe experiențe reale ale studenților ULBS.':'Enter your trip details and receive recommendations based on real ULBS student experiences.',
         'Buget (€)':'Budget (€)','Durată (zile)':'Duration (days)','🔍 Generează plan':'🔍 Generate plan',
-        'Reduceri disponibile':'Available discounts','Reduceri și beneficii disponibile pentru studenții ULBS în România și Uniunea Europeană.':'Discounts and benefits available to ULBS students in Romania and the European Union.',
+        'Plan pentru destinație':'Plan for destination','Reduceri disponibile':'Available discounts','Reduceri și beneficii disponibile pentru studenții ULBS în România și Uniunea Europeană.':'Discounts and benefits available to ULBS students in Romania and the European Union.',
         'Reduceri muzee UE':'EU museum discounts','Transport public studenți':'Student public transport',
         'Verificat de studenți':'Verified by students','Recomandări comunitate':'Community recommendations','Experiențe reale, validate de studenți ULBS. Fiecare recomandare vine de la un coleg de-al tău.':'Real experiences, validated by ULBS students. Every recommendation comes from one of your peers.',
         'Cazări recomandate':'Recommended stays','Restaurante accesibile':'Affordable restaurants','Activități gratuite':'Free activities','Trasee de weekend':'Weekend routes','Locuri recomandate':'Recommended places',
@@ -145,10 +145,10 @@
         'Participă la un eveniment ESN':'Join an ESN event','Înscrie-te și participă la un eveniment organizat de ESN Sibiu.':'Register and attend an event organized by ESN Sibiu.',
         'Descoperă organizațiile studențești locale':'Discover local student organizations','Vizitează sediul a minimum 3 organizații studențești din Sibiu.':'Visit the offices of at least 3 student organizations in Sibiu.',
         '100 puncte':'100 points','75 puncte':'75 points','50 puncte':'50 points','150 puncte':'150 points','200 puncte':'200 points',
-        'Proiect academic ULBS':'ULBS academic project','Platformă construită pentru mobilitate studențească':'A platform built for student mobility','Conceptul combină design thinking, planificare asistată, resurse verificabile și contribuții comunitare pentru a reduce incertitudinea călătoriilor studențești.':'The concept combines design thinking, assisted planning, verifiable resources, and community contributions to reduce uncertainty in student travel.',
-        'Universitatea „Lucian Blaga” din Sibiu':'Lucian Blaga University of Sibiu','Context academic, comunitate locală și punct de validare pentru experiențele studenților.':'Academic context, local community, and validation point for student experiences.',
-        'Extindere europeană prin explorare, mobilități, misiuni și conectare între campusurile FORTHEM: Sibiu, Poitiers, València, Palermo, Vilnius, Agder și Mainz.':'European expansion through exploration, mobility, missions, and connection across FORTHEM campuses: Sibiu, Poitiers, València, Palermo, Vilnius, Agder, and Mainz.',
-        'destinații documentate':'documented destinations','contribuții comunitare':'community contributions','resurse StudentKit':'StudentKit resources','parteneri FORTHEM integrați':'integrated FORTHEM partners',
+        'Proiect academic ULBS':'ULBS academic project','Inițiativă studențească ULBS':'ULBS student initiative','Platformă pentru experiența studentului ca turist':'Platform for the student-as-tourist experience','TravelStudent ULBS este o inițiativă studențească gândită pentru a încuraja, simplifica și îmbunătăți experiența studentului ca turist. Conceptul combină planificare asistată, resurse verificate și recomandări din comunitate, astfel încât studenții să călătorească mai informat, mai sigur și cu bugete mai bine controlate.':'TravelStudent ULBS is a student initiative designed to encourage, simplify, and improve the student-as-tourist experience. The concept combines assisted planning, verified resources, and community recommendations so students can travel more informed, safer, and with better-controlled budgets.','Platformă construită pentru mobilitate studențească':'A platform built for student mobility','Conceptul combină design thinking, planificare asistată, resurse verificabile și contribuții comunitare pentru a reduce incertitudinea călătoriilor studențești.':'The concept combines design thinking, assisted planning, verifiable resources, and community contributions to reduce uncertainty in student travel.',
+        'Universitatea „Lucian Blaga” din Sibiu':'Lucian Blaga University of Sibiu','Context academic, comunitate locală și punct de validare pentru experiențele studenților.':'Academic context, local community, and validation point for student experiences.','Context academic, comunitate locală și punct de validare pentru experiențele studenților care descoperă orașe, campusuri și oportunități culturale.':'Academic context, local community, and validation point for students discovering cities, campuses, and cultural opportunities.',
+        'Extindere europeană prin explorare, mobilități, misiuni și conectare între campusurile FORTHEM: Sibiu, Poitiers, València, Palermo, Vilnius, Agder și Mainz.':'European expansion through exploration, mobility, missions, and connection across FORTHEM campuses: Sibiu, Poitiers, València, Palermo, Vilnius, Agder, and Mainz.','Extindere europeană prin explorare, misiuni, recomandări turistice și conectare între orașele universitare FORTHEM: Sibiu, Poitiers, València, Palermo, Vilnius, Kristiansand și Mainz.':'European expansion through exploration, missions, travel recommendations, and connection between FORTHEM university cities: Sibiu, Poitiers, València, Palermo, Vilnius, Kristiansand, and Mainz.',
+        'destinații documentate':'documented destinations','contribuții comunitare':'community contributions','resurse StudentKit':'StudentKit resources','orașe FORTHEM integrate':'integrated FORTHEM cities',
         'Planifică mai rapid. Călătorește mai sigur.':'Plan faster. Travel safer.','TravelStudent ULBS transformă experiențele comunității în decizii clare pentru fiecare student.':'TravelStudent ULBS turns community experience into clear decisions for every student.','Începe planificarea':'Start planning',
         'Platformă de călătorie a studenților ULBS. Platformă verificată de comunitatea studenților pentru planificarea inteligentă a călătoriilor.':'Travel platform for ULBS students. A community-verified platform for intelligent trip planning.',
         '📍 Str. Victoriei 10, Sibiu, România':'📍 10 Victoriei Street, Sibiu, Romania','Link-uri rapide':'Quick links','Universitatea Lucian Blaga din Sibiu':'Lucian Blaga University of Sibiu','© 2026 TravelStudent ULBS. Toate drepturile rezervate.':'© 2025 TravelStudent ULBS. All rights reserved.','Platformă activă':'Active platform'
@@ -209,7 +209,15 @@
       document.getElementById('outDiscounts').textContent=plan.discounts;
       document.getElementById('outChecklist').innerHTML=plan.check.map(item=>`<li>${item}</li>`).join('');
     }
-    document.addEventListener('DOMContentLoaded',()=>{collectTextNodes();setLanguage(localStorage.getItem('travelstudent-lang')||'ro');generatePlan();document.getElementById('dest').addEventListener('change',generatePlan);['budget','days','people'].forEach(id=>document.getElementById(id).addEventListener('input',generatePlan));});setLanguage(localStorage.getItem('travelstudent-lang')||'ro');});
+    document.addEventListener('DOMContentLoaded',()=>{
+      collectTextNodes();
+      const params=new URLSearchParams(window.location.search);
+      const initialLang=params.get('lang') || localStorage.getItem('travelstudent-lang') || 'ro';
+      setLanguage(initialLang==='en'?'en':'ro');
+      generatePlan();
+      document.getElementById('dest').addEventListener('change',generatePlan);
+      ['budget','days','people'].forEach(id=>document.getElementById(id).addEventListener('input',generatePlan));
+    });
   </script>
 </body>
 </html>
