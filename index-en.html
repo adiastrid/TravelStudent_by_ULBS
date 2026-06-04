@@ -242,7 +242,7 @@
     document.addEventListener('DOMContentLoaded',()=>{
       collectTextNodes();
       const params=new URLSearchParams(window.location.search);
-      const initialLang=params.get('lang') || localStorage.getItem('travelstudent-lang') || 'ro';
+      const initialLang=params.get('lang') || localStorage.getItem('travelstudent-lang') || 'en';
       setLanguage(initialLang==='en'?'en':'ro');
       generatePlan();
       document.getElementById('dest').addEventListener('change',generatePlan);
